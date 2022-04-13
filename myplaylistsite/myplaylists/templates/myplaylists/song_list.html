@@ -1,0 +1,15 @@
+{% extends "myplaylists/base.html" %}
+
+{% block content %}
+    <h2>Songs</h2>
+    <a href="{% url 'song-add' %}">Add a Song</a>
+    <ul>
+        {% for song in object_list %}
+            <li>
+                {{ song.name }}
+                <a href="{% url 'song-update' song.pk %}">[Edit]</a>  
+                <a href="{% url 'song-delete' song.pk %}">[Delete]</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

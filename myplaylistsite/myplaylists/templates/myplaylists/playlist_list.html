@@ -1,0 +1,21 @@
+{% extends "myplaylists/base.html" %}
+
+{% block content %}
+    <h2>Playlists</h2>
+    <a href="{% url 'playlist-add' %}">Add a playlist</a>
+    <ul>
+        {% for playlist in object_list %}
+            <li>{{ playlist.name }} 
+                <a href="{% url 'playlist-update' playlist.pk %}">[Edit]</a>  
+                <a href="{% url 'playlist-delete' playlist.pk %}">[Delete]</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'artist-list' %}">Artist List</a>
+    </p>
+    <p>
+        <a href="{% url 'song-list' %}">Song List</a>
+    </p>
+    
+{% endblock %}
