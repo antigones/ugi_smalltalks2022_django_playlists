@@ -7,7 +7,6 @@ A superbasic application to edit playlists made with Django
 
 <code>pip install -R requirements.txt</code>
 
-
 2. Run the webserver in development mode (development purposes only!)
 
 <code>python manage.py runserver</code>
